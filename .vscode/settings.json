@@ -6,6 +6,7 @@
     "crwn",
     "firebaseapp",
     "firestore",
+    "middlewares",
     "signin"
   ]
 }
