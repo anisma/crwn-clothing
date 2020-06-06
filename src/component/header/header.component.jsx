@@ -12,8 +12,9 @@ import { selectCurrentUser } from '../../redux/user/user.selector';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 import './header.styles.scss';
+import { clearAllFromCart } from '../../redux/cart/cart.action';
 
-const Header = ({ currentUser, hidden }) => (
+const Header = ({ currentUser, hidden, dispatch }) => (
    <div className="header">
       <Link className="logo-container" to="/">
          <Logo className="logo" />
@@ -26,7 +27,13 @@ const Header = ({ currentUser, hidden }) => (
             CONTACT
          </Link>
          {currentUser ? (
-            <div className="option" onClick={() => auth.signOut()}>
+            <div
+               className="option"
+               onClick={() => {
+                  auth.signOut();
+                  dispatch(clearAllFromCart());
+               }}
+            >
                SIGN OUT
             </div>
          ) : (
