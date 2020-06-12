@@ -4,7 +4,6 @@ import { SpinnerOverlay, SpinnerContainer } from './with-spinner.styles';
 
 const WithSpinner = (WrappedComponent) => {
    const Spinner = ({ isLoading, ...otherProps }) => {
-      console.log('dfsafa');
       return isLoading ? (
          <SpinnerOverlay>
             <SpinnerContainer />
