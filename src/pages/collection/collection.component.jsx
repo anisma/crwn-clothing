@@ -6,7 +6,9 @@ import { selectCollection } from '../../redux/shop/shop.selector';
 import { withRouter } from 'react-router-dom';
 import CollectionItem from '../../component/collection-item/collection-item.component';
 
-const CollectionsPage = ({ collection: { title, items } }) => {
+const CollectionPage = ({ collection }) => {
+   console.log(collection);
+   const { title, items } = collection;
    return (
       <div className='collection-page'>
          <h2 className='title'>{title}</h2>
@@ -23,4 +25,4 @@ const mapStateToProps = (state, ownProps) => ({
    collection: selectCollection(ownProps.match.params.collectionId)(state),
 });
 
-export default withRouter(connect(mapStateToProps)(CollectionsPage));
+export default withRouter(connect(mapStateToProps)(CollectionPage));

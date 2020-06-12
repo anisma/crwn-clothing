@@ -1,4 +1,4 @@
-import { createSelector } from "reselect";
+import { createSelector } from 'reselect';
 
 //input selector
 const selectShop = (state) => state.shop;
@@ -10,12 +10,10 @@ export const selectCollections = createSelector(
 );
 
 export const selectCollection = (collectionUrlParam) => {
-   console.log("pass");
-   createSelector([selectCollections], (collections) =>
+   return createSelector([selectCollections], (collections) =>
       collections ? collections[collectionUrlParam] : null
    );
 };
-
 export const selectCollectionsForPreview = createSelector(
    [selectCollections],
    (collections) =>

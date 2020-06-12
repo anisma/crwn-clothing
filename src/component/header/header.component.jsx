@@ -1,24 +1,22 @@
-import React from "react";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
-import { auth } from "../../firebase/firebase.utils";
+import { auth } from '../../firebase/firebase.utils';
 
-import { ReactComponent as Logo } from "../../assets/crown.svg";
-import CartIcon from "../cart-icon/cart-icon.component";
-import CartDropdown from "../cart-dropdown/cart-dropdown.component";
-import { selectCurrentUser } from "../../redux/user/user.selector";
-import { selectCartHidden } from "../../redux/cart/cart.selectors";
-import { clearAllFromCart } from "../../redux/cart/cart.action";
+import { ReactComponent as Logo } from '../../assets/crown.svg';
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import { selectCurrentUser } from '../../redux/user/user.selector';
+import { selectCartHidden } from '../../redux/cart/cart.selectors';
+import { clearAllFromCart } from '../../redux/cart/cart.action';
 
 import {
    HeaderContainer,
    LogoContainer,
    OptionsContainer,
    OptionLink,
-} from "./header.styles";
-
-import "./header.styles.scss";
+} from './header.styles';
 
 const Header = ({ currentUser, hidden, dispatch }) => (
    <HeaderContainer>
