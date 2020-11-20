@@ -13,6 +13,7 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.action';
 import { selectCurrentUser } from './redux/user/user.selector';
+import GithubLink from './component/github-link/github-link.component';
 class App extends React.Component {
    unsubscribeFromAuth = null;
 
@@ -42,7 +43,8 @@ class App extends React.Component {
    render() {
       return (
          <div>
-            <GlobalStyles/>
+            <GlobalStyles />
+            <GithubLink/>
             <Header />
             <Switch>
                <Route exact path='/' component={HomePage} />
